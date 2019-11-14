@@ -11,9 +11,17 @@ imaging applications.
 
 ### Usage
 
-Download [openseadragon-imaginghelper.min.js](http://msalsbery.github.io/openseadragon-imaging/builds/openseadragon-imaginghelper.min.js) (or the un-minified [openseadragon-imaginghelper.js](http://msalsbery.github.io/openseadragon-imaging/builds/openseadragon-imaginghelper.js))
+_**Prerequisite note: OpenSeadragonImagingHelper requires [OpenSeadragon](https://github.com/openseadragon/openseadragon) version 2.0+.**_
 
-To use the plugin, add **openseadragon-imaginghelper.min.js** after **openseadragon.min.js** to your site.
+The OpenSeadragonImagingHelper bundle can be obtained the following ways:
+
+1. Direct download [openseadragon-imaginghelper.js](http://msalsbery.github.io/openseadragon-imaging/builds/openseadragon-imaginghelper.js) (and optionally [openseadragon-imaginghelper.js.map](http://msalsbery.github.io/openseadragon-imaging/builds/openseadragon-imaginghelper.js.map))
+2. npm
+```
+    npm install @openseadragon-imaging/openseadragon-imaginghelper
+```
+
+The OpenSeadragonImagingHelper bundle can be included using a script tag in HTML or imported as a library module (ES2015, CommonJS, AMD).
 
 An **ImagingHelper** object can be created and attached to an [OpenSeadragon.Viewer](http://openseadragon.github.io/docs/OpenSeadragon.Viewer.html) two ways:
 
@@ -24,7 +32,34 @@ An **ImagingHelper** object can be created and attached to an [OpenSeadragon.Vie
 Both methods return a new ImagingHelper object, and both methods also add the ImagingHelper
 object reference to the viewer as a property called 'imagingHelper'.
 
+**Example using an HTML script tag**
+```html
+	<script type="text/javascript" src="path_to/openseadragon/openseadragon.js"></script>
+	<script type="text/javascript" src="path_to/openseadragon-imaging/openseadragon-imaginghelper.js"></script>
+```
 ```javascript
+    // Example 1 - Use the Viewer.activateImagingHelper() method to create an ImagingHelper
+
+    // create an OpenSeadragon viewer
+    var viewer = window.OpenSeadragon({...});
+    // add an ImagingHelper to the viewer
+    var imagingHelper = viewer.activateImagingHelper({...});
+
+
+    // Example 2 - Attach a new ImagingHelper to an existing OpenSeadragon.Viewer
+
+    var imagingHelper = new window.OpenSeadragonImaging.ImagingHelper({viewer: existingviewer});
+```
+
+**Example importing as a module**
+```
+    npm install openseadragon --save
+    npm install @openseadragon-imaging/openseadragon-imaginghelper --save
+```
+```javascript
+import OpenSeadragon from 'openseadragon';
+import OpenSeadragonImagingHelper from '@openseadragon-imaging/openseadragon-imaginghelper';
+
     // Example 1 - Use the Viewer.activateImagingHelper() method to create an ImagingHelper
 
     // create an OpenSeadragon viewer
@@ -35,7 +70,7 @@ object reference to the viewer as a property called 'imagingHelper'.
 
     // Example 2 - Attach a new ImagingHelper to an existing OpenSeadragon.Viewer
 
-    var imagingHelper = new OpenSeadragonImaging.ImagingHelper({viewer: existingviewer});
+    var imagingHelper = new OpenSeadragonImagingHelper({viewer: existingviewer});
 ```
 
 ### Details
