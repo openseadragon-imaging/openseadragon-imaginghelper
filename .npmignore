@@ -1,0 +1,14 @@
+.vscode/
+src/
+docs/
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitignore
+.npmignore
+.prettierignore
+.prettierrc
+doc-conf.json
+webpack.common.js
+webpack.dev.js
+webpack.prod.js

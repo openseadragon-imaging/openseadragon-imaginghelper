@@ -1,8 +1,6 @@
 node_modules
-*.sublime-workspace
-build/
+dist/
 docs/
-devconfig.js
 
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 [Bb]in/

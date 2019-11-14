@@ -19,7 +19,7 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/* global OpenSeadragon */
+import OpenSeadragon from 'openseadragon';
 
 /**
  * @file
@@ -35,7 +35,7 @@
  */
 
 
-(function (OSD, $, undefined) {
+export default (function (OSD, $) {
 
 	if (!OSD.version || OSD.version.major < 2) {
 		throw new Error('OpenSeadragonImagingHelper requires OpenSeadragon version 2.0.0+');
@@ -166,12 +166,12 @@
 	 * @property {Number} revision - The revision number.
 	 */
 	$.ImagingHelper.version = {
-		versionStr: '<%= imaginghelperVersion.versionStr %>'
+		versionStr: '<%= pkg.version %>'
 	};
 	var versionSplits = $.ImagingHelper.version.versionStr.split('.');
-	$.ImagingHelper.version.major =      parseInt(versionSplits[0], 10);
-	$.ImagingHelper.version.minor =      parseInt(versionSplits[1], 10);
-	$.ImagingHelper.version.revision =   parseInt(versionSplits[2], 10);
+	$.ImagingHelper.version.major = parseInt(versionSplits[0], 10);
+	$.ImagingHelper.version.minor = parseInt(versionSplits[1], 10);
+	$.ImagingHelper.version.revision = parseInt(versionSplits[2], 10);
 
 
 	// Inherit OpenSeadragon.EventSource
@@ -831,4 +831,5 @@
 		// this._trackZoomPan();
 	}
 
-}(OpenSeadragon, window.OpenSeadragonImaging = window.OpenSeadragonImaging || {}));
+	return $.ImagingHelper;
+}(OpenSeadragon || window.OpenSeadragon, window.OpenSeadragonImaging = window.OpenSeadragonImaging || {}));

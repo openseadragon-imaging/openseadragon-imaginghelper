@@ -1,13 +1,26 @@
 {
+	"root": true,
 	"env": {
+		"es6": true,
+		"commonjs": true,
+		"amd": false,
 		"browser": true,
-		"node": false,
-		"es6": false
+		"node": true,
+		"jquery": false,
+		"mongo": false
 	},
-	"extends": "eslint:recommended",
+	"extends": ["eslint:recommended"],
 	"parserOptions": {
-		"ecmaVersion": 5,
-		"sourceType": "module"
+		"ecmaVersion": 8,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"impliedStrict": true,
+            "jsx": true
+		}
+	},
+	"globals": {
+		//"_": false,
+		//"OpenSeadragon": false
 	},
 	"rules": {
 		"no-console": 0,
@@ -103,8 +116,5 @@
 		"unicode-bom": ["error"],
 		"no-caller": ["error"],
 		"no-loop-func": ["error"]
-	},
-	"globals": {
-		"_": false
 	}
 }
