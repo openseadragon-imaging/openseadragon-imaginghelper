@@ -11,10 +11,15 @@ const gitHash = execa.sync('git', ['rev-parse', '--short', 'HEAD']).stdout;
 const gitDirty = execa.sync('git', ['status', '-s', '-uall']).stdout.length > 0;
 
 const bannerOpts = {
-	banner: process.env.npm_package_name + ' ' +
-					process.env.npm_package_version + ' ' +
-					gitHash + ' (' +
-					(gitDirty ? 'dirty' : 'clean') + ')'
+	banner:
+		process.env.npm_package_name +
+		' ' +
+		process.env.npm_package_version +
+		' ' +
+		gitHash +
+		' (' +
+		(gitDirty ? 'dirty' : 'clean') +
+		')'
 };
 
 const minifyOpts = {
@@ -29,15 +34,15 @@ const minifyPluginOpts = {
 };
 
 module.exports = merge(common, {
-    mode: 'production',
+	mode: 'production',
 	devtool: 'source-map',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'openseadragon-imaginghelper.js',
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'openseadragon-imaginghelper.js',
 		library: 'openseadragon-imaginghelper',
 		libraryTarget: 'umd',
 		libraryExport: 'default'
-    },
+	},
 	plugins: [
 		//new CleanWebpackPlugin(),
 		// note MinifyPlugin needs to be before BannerPlugin or banner gets minified out

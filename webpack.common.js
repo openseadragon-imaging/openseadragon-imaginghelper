@@ -2,7 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/imaginghelper.js'),
+	entry: path.resolve(__dirname, 'src/imaginghelper.js'),
 	externals: {
 		// OpenSeadragon: {
 		// 	commonjs: 'openseadragon',
@@ -13,14 +13,14 @@ module.exports = {
 		openseadragon: 'openseadragon'
 	},
 	module: {
-        rules: [
+		rules: [
 			{
-                enforce: 'pre',
+				enforce: 'pre',
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-                use: {
-                    loader: 'string-replace-loader',
-                    options: {
+				use: {
+					loader: 'string-replace-loader',
+					options: {
 						multiple: [
 							{
 								search: '<%= pkg.name %>',
@@ -34,20 +34,20 @@ module.exports = {
 							}
 						]
 					}
-                }
+				}
 			},
 			{
-                enforce: 'pre',
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: 'eslint-loader'
-            },
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
+				enforce: 'pre',
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: 'eslint-loader'
+			},
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
 						plugins: [
 							// [
 							// 	require('@babel/plugin-transform-modules-commonjs'),
@@ -56,7 +56,7 @@ module.exports = {
 							// 	}
 							// ]
 						],
-                        presets: [
+						presets: [
 							[
 								'@babel/preset-env',
 								{
@@ -70,23 +70,23 @@ module.exports = {
 								}
 							],
 							'@babel/preset-react'
-                        ]
-                    }
-                }
-            }//,
-            // {
-            //     test: /\.scss$/,
-            //     use: [
-            //         'style-loader',
-            //         'css-loader',
-            //         'sass-loader'
-            //     ]
-            // }
-        ]
-    },
+						]
+					}
+				}
+			} //,
+			// {
+			//     test: /\.scss$/,
+			//     use: [
+			//         'style-loader',
+			//         'css-loader',
+			//         'sass-loader'
+			//     ]
+			// }
+		]
+	},
 	plugins: [
 		new CleanWebpackPlugin({
 			verbose: true
-		}),
+		})
 	]
 };

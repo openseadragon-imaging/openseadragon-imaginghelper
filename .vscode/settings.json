@@ -1,36 +1,88 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-	// Controls the font size.
-	"editor.fontSize": 15,
+  //"eslint.workingDirectories": ["./src"],
+  //"tslint.enable": false,
+  "eslint.enable": true,
+  "eslint.trace.server": "off",
+  "eslint.debug": false,
+  "eslint.lintTask.enable": false,
+  "eslint.format.enable": false,
 
-	// The number of spaces a tab is equal to.
-	"editor.tabSize": 4,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
 
-	// Insert spaces when pressing Tab.
-	"editor.insertSpaces": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false
+  },
 
-	// When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
-	"editor.detectIndentation": false,
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  //   "editor.formatOnSave": true,
+  //   "editor.formatOnPaste": true,
+  //   "editor.tabSize": 4,
+  //   "editor.insertSpaces": false
+  // },
 
-	// Columns at which to show vertical rulers
-	"editor.rulers": [80],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
 
-	// Controls how lines should wrap. Can be:
-	//  - 'off' (disable wrapping),
-	//  - 'on' (viewport wrapping),
-	//  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
-	//  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
-	"editor.wordWrap": "on",
+  // "[scss]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  //   "editor.formatOnSave": true,
+  //   "editor.formatOnPaste": true,
+  //   "editor.tabSize": 2,
+  //   "editor.insertSpaces": true
+  // },
 
-	// Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
-	"editor.wrappingIndent": "none",
+  // "[css]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  //   "editor.formatOnSave": true,
+  //   "editor.formatOnPaste": true,
+  //   "editor.tabSize": 2,
+  //   "editor.insertSpaces": true
+  // },
 
-	// When enabled, will trim trailing whitespace when you save a file.
-	"files.trimTrailingWhitespace": true,
+  // Controls the font size.
+  "editor.fontSize": 15,
 
-	// The default end of line character. Use \n for LF and \r\n for CRLF.
-	"files.eol": "\n",
+  // The number of spaces a tab is equal to.
+  "editor.tabSize": 4,
 
-	// When enabled, insert a final new line at the end of the file when saving it.
-	"files.insertFinalNewline": true
+  // Insert spaces when pressing Tab.
+  "editor.insertSpaces": false,
+
+  // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
+  "editor.detectIndentation": false,
+
+  // Columns at which to show vertical rulers
+  "editor.rulers": [80],
+
+  // Controls how lines should wrap. Can be:
+  //  - 'off' (disable wrapping),
+  //  - 'on' (viewport wrapping),
+  //  - 'wordWrapColumn' (wrap at `editor.wordWrapColumn`) or
+  //  - 'bounded' (wrap at minimum of viewport and `editor.wordWrapColumn`).
+  "editor.wordWrap": "on",
+
+  // Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
+  "editor.wrappingIndent": "none",
+
+  // When enabled, will trim trailing whitespace when you save a file.
+  "files.trimTrailingWhitespace": true,
+
+  // The default end of line character. Use \n for LF and \r\n for CRLF.
+  "files.eol": "\n",
+
+  // When enabled, insert a final new line at the end of the file when saving it.
+  "files.insertFinalNewline": true
 }

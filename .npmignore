@@ -3,7 +3,7 @@ src/
 docs/
 .editorconfig
 .eslintignore
-.eslintrc.json
+.eslintrc
 .gitignore
 .npmignore
 .prettierignore
