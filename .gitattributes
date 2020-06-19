@@ -1,0 +1,27 @@
+*			text=auto
+
+*.txt		text
+
+# Files that will always have CRLF line endings
+*.sln		text eol=crlf
+*.vcproj	text eol=crlf
+Web.config	text eol=crlf
+*.bat		text eol=crlf
+
+# Files that will always have LF line endings
+*.sh		text eol=lf
+*.js		text eol=lf
+*.jsx		text eol=lf
+*.ts		text eol=lf
+*.css		text eol=lf
+*.scss		text eol=lf
+*.less		text eol=lf
+*.html		text eol=lf
+*.json		text eol=lf
+
+# Binary files that won't be touched
+*.png		-text
+*.jpg		-text
+*.jpeg		-text
+*.tif		-text
+*.tiff		-text
