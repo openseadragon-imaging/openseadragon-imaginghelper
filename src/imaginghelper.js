@@ -47,7 +47,7 @@ export default (function (OSD, $) {
 	 * @method activateImagingHelper
 	 * @memberof external:"OpenSeadragon.Viewer"#
 	 * @param {Object} options
-	 * @param {OpenSeadragon.EventHandler} [options.onImageViewChanged] - {@link OpenSeadragonImaging.ImagingHelper.event:image-view-changed} handler method.
+	 * @param {external:"OpenSeadragon.EventHandler"} [options.onImageViewChanged] - {@link OpenSeadragonImaging.ImagingHelper.event:image-view-changed} handler method.
 	 * @param {Integer} [options.worldIndex] - The index of the image for world.getItemAt
 	 * @returns {OpenSeadragonImaging.ImagingHelper}
 	 *
@@ -103,7 +103,7 @@ export default (function (OSD, $) {
 		 * @member {object} options
 		 * @memberof OpenSeadragonImaging.ImagingHelper#
 		 * @property {external:"OpenSeadragon.Viewer"} viewer - Reference to OpenSeadragon viewer this ImagingHelper is attached to.
-		 * @property {OpenSeadragon.EventHandler} [onImageViewChanged] - {@link OpenSeadragonImaging.ImagingHelper.event:image-view-changed} handler method.
+		 * @property {external:"OpenSeadragon.EventHandler"} [onImageViewChanged] - {@link OpenSeadragonImaging.ImagingHelper.event:image-view-changed} handler method.
 		 */
 		this.options = options;
 		/**
