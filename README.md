@@ -1,4 +1,5 @@
 ## OpenSeadragonImagingHelper
+
 [![Gitter](https://badges.gitter.im/Join_Chat.svg)](https://gitter.im/msalsbery/OpenSeadragonImaging?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 OpenSeadragonImagingHelper is a plugin for [OpenSeadragon](https://github.com/openseadragon/openseadragon)
@@ -17,6 +18,7 @@ The OpenSeadragonImagingHelper bundle can be obtained the following ways:
 
 1. Direct download [openseadragon-imaginghelper.js](http://msalsbery.github.io/openseadragon-imaging/builds/openseadragon-imaginghelper.js) (and optionally [openseadragon-imaginghelper.js.map](http://msalsbery.github.io/openseadragon-imaging/builds/openseadragon-imaginghelper.js.map))
 2. npm
+
 ```
     npm install @openseadragon-imaging/openseadragon-imaginghelper
 ```
@@ -25,7 +27,6 @@ The OpenSeadragonImagingHelper bundle can be included using a script tag in HTML
 
 An **ImagingHelper** object can be created and attached to an [OpenSeadragon.Viewer](http://openseadragon.github.io/docs/OpenSeadragon.Viewer.html) two ways:
 
-
 1. Call the activateImagingHelper method on the viewer
 2. Create a new ImagingHelper object, passing a viewer reference in the options parameter
 
@@ -33,10 +34,18 @@ Both methods return a new ImagingHelper object, and both methods also add the Im
 object reference to the viewer as a property called 'imagingHelper'.
 
 **Example using an HTML script tag**
+
 ```html
-	<script type="text/javascript" src="path_to/openseadragon/openseadragon.js"></script>
-	<script type="text/javascript" src="path_to/openseadragon-imaging/openseadragon-imaginghelper.js"></script>
+<script
+  type="text/javascript"
+  src="path_to/openseadragon/openseadragon.js"
+></script>
+<script
+  type="text/javascript"
+  src="path_to/openseadragon-imaging/openseadragon-imaginghelper.js"
+></script>
 ```
+
 ```javascript
     // Example 1 - Use the Viewer.activateImagingHelper() method to create an ImagingHelper
 
@@ -52,10 +61,12 @@ object reference to the viewer as a property called 'imagingHelper'.
 ```
 
 **Example importing as a module**
+
 ```
     npm install openseadragon --save
     npm install @openseadragon-imaging/openseadragon-imaginghelper --save
 ```
+
 ```javascript
 import OpenSeadragon from 'openseadragon';
 import OpenSeadragonImagingHelper from '@openseadragon-imaging/openseadragon-imaginghelper';
@@ -83,10 +94,9 @@ In OpenSeadragon 2.0 and above, conversion is based on the image at index 0 in w
 The ImagingHelper methods use three coordinate systems,
 named as follows:
 
-
 1. **physical:** Device pixel coordinates relative to the SeaDragon viewer
-2. **logical:**  0.0 to 1.0 relative to the image's native dimensions
-3. **data:**     Pixel coordinates relative to the image's native dimensions
+2. **logical:** 0.0 to 1.0 relative to the image's native dimensions
+3. **data:** Pixel coordinates relative to the image's native dimensions
 
 Methods are provided to zoom and/or pan using these conventions, as well as to convert
 individual horizontal/vertical values or point ({x,y}) objects between coordinate systems
@@ -138,5 +148,4 @@ All the sample code is in [demo/scripts/viewmodel.js](http://msalsbery.github.io
 
 ### In the works...
 
-
-1) Better multi-image support
+1. Better multi-image support

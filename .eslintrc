@@ -1,6 +1,10 @@
 {
   "root": true,
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  },
   "env": {
     "es6": true,
     "es2017": true,

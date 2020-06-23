@@ -40,7 +40,9 @@
     "core-js": "3.6.5",
     "css-loader": "^3.6.0",
     "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
     "fibers": "5.0.0",
     "jsdoc": "^3.6.4",
     "node-sass": "^4.14.1",
@@ -61,6 +63,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "doc": ".\\node_modules\\.bin\\jsdoc -c doc-conf.json"
+    "doc": ".\\node_modules\\.bin\\jsdoc -c doc-conf.json",
+    "lint": "eslint **/*",
+    "lint-fix": "eslint --fix **/*",
+    "prettier": "prettier --check \"**/*\"",
+    "prettier-fix": "prettier --write \"**/*\""
   }
 }
