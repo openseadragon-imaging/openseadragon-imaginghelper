@@ -88,5 +88,20 @@ module.exports = {
 		new CleanWebpackPlugin({
 			verbose: true
 		})
-	]
+	],
+	watch: false,
+	watchOptions: {
+		aggregateTimeout: 500,
+		poll: false,
+		ignored: [
+			'.git/**',
+			'node_modules/**',
+			'.vscode/',
+			'dist/',
+			'docs/',
+			'doc-conf.json',
+			'package.json',
+			'package-lock.json'
+		]
+	}
 };
