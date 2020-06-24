@@ -1,7 +1,7 @@
 {
   "source": {
     "include": [
-      "../OpenSeadragonImaging/shared/docs/docs-globals.js",
+      "../openseadragon-imaging/shared/docs/docs-globals.js",
       "./dist/openseadragon-imaginghelper.js"
     ]
   },
@@ -24,7 +24,7 @@
   },
   "opts": {
     "destination": "./docs/",
-    "template": "../OpenSeadragonImaging/shared/docs/templates/openseadragonimaging",
+    "template": "../openseadragon-imaging/shared/docs/templates/openseadragonimaging",
     "private": false
   }
 }
