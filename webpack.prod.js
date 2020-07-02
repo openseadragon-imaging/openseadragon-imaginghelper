@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-//const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const execa = require('execa');
 
@@ -44,7 +43,6 @@ module.exports = merge(common, {
 		libraryExport: 'default'
 	},
 	plugins: [
-		//new CleanWebpackPlugin(),
 		// note MinifyPlugin needs to be before BannerPlugin or banner gets minified out
 		//   (in the future, minifyPluginOpts.comments can be adjusted to preserve
 		//    the banner comments)

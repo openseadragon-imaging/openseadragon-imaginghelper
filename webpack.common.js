@@ -80,7 +80,13 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin({
-			verbose: true
+			dry: false,
+			verbose: true,
+			// Removes files once prior to Webpack compilation
+			//   Not included in rebuilds (watch mode)
+			// Paths relative to webpack's output.path directory
+			// Use !negative patterns to exclude files
+			cleanOnceBeforeBuildPatterns: ['**/*']
 		})
 	],
 	watch: false,
