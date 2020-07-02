@@ -14,13 +14,13 @@
   },
   "contributors": [
     {
-      "name": "birm"
+      "name": "Ryan Birmingham"
     },
     {
-      "name": "iangilman"
+      "name": "Ian Gilman"
     },
     {
-      "name": "DimaSavchenko"
+      "name": "Dima Savchenko"
     }
   ],
   "main": "dist/openseadragon-imaginghelper.js",
