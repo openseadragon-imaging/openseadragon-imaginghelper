@@ -9,13 +9,19 @@
   "private": false,
   "author": {
     "name": "Mark Salsbery",
-    "email": "msalsbery@hotmail.com"
+    "email": "msalsbery@hotmail.com",
+    "url": "https://github.com/msalsbery"
   },
   "contributors": [
-    "msalsbery",
-    "birm",
-    "iangilman",
-    "DimaSavchenko"
+    {
+      "name": "birm"
+    },
+    {
+      "name": "iangilman"
+    },
+    {
+      "name": "DimaSavchenko"
+    }
   ],
   "main": "dist/openseadragon-imaginghelper.js",
   "homepage": "https://github.com/openseadragon-imaging/openseadragon-imaginghelper#readme",
