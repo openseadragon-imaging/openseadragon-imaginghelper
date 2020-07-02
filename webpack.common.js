@@ -1,6 +1,14 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const versionSplits = process.env.npm_package_version.split('.');
+const versionObj = {
+	versionStr: process.env.npm_package_version,
+	major: parseInt(versionSplits[0], 10),
+	minor: parseInt(versionSplits[1], 10),
+	revision: parseInt(versionSplits[2], 10)
+};
+
 module.exports = {
 	entry: path.resolve(__dirname, 'src/imaginghelper.js'),
 	externals: {
@@ -30,6 +38,11 @@ module.exports = {
 							{
 								search: '<%= pkg.version %>',
 								replace: process.env.npm_package_version,
+								flags: 'g'
+							},
+							{
+								search: "'<%= pkg.version.obj %>'",
+								replace: JSON.stringify(versionObj),
 								flags: 'g'
 							}
 						]
@@ -91,7 +104,7 @@ module.exports = {
 	],
 	watch: false,
 	watchOptions: {
-		aggregateTimeout: 500,
+		aggregateTimeout: 1000,
 		poll: false,
 		ignored: [
 			'.git/**',

@@ -22,15 +22,15 @@
 import OpenSeadragon from 'openseadragon';
 
 /**
- * @file
- * @version  <%= pkg.name %> <%= pkg.version %>
+ * @file openseadragon-imaginghelper.js
+ * @version <%= pkg.version %>
  * @author Mark Salsbery <msalsbery@hotmail.com>
  *
  */
 
 /**
  * @module openseadragon-imaginghelper
- * @version  <%= pkg.name %> <%= pkg.version %>
+ * @version <%= pkg.version %>
  *
  */
 
@@ -183,13 +183,7 @@ export default (function (OSD, $) {
 	 * @property {Number} minor - The minor version number.
 	 * @property {Number} revision - The revision number.
 	 */
-	$.ImagingHelper.version = {
-		versionStr: '<%= pkg.version %>'
-	};
-	var versionSplits = $.ImagingHelper.version.versionStr.split('.');
-	$.ImagingHelper.version.major = parseInt(versionSplits[0], 10);
-	$.ImagingHelper.version.minor = parseInt(versionSplits[1], 10);
-	$.ImagingHelper.version.revision = parseInt(versionSplits[2], 10);
+	$.ImagingHelper.version = '<%= pkg.version.obj %>';
 
 	// Inherit OpenSeadragon.EventSource
 	// TODO Drop IE<9 support and use these. For now we'll use the OpenSeadragon.extend() call below...

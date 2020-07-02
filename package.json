@@ -11,9 +11,14 @@
     "name": "Mark Salsbery",
     "email": "msalsbery@hotmail.com"
   },
-  "contributors": [],
+  "contributors": [
+    "msalsbery",
+    "birm",
+    "iangilman",
+    "DimaSavchenko"
+  ],
   "main": "dist/openseadragon-imaginghelper.js",
-  "homepage": "https://github.com/openseadragon-imaging/openseadragon-imaginghelper",
+  "homepage": "https://github.com/openseadragon-imaging/openseadragon-imaginghelper#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/openseadragon-imaging/openseadragon-imaginghelper.git"
@@ -22,7 +27,10 @@
   "keywords": [
     "openseadragon",
     "openseadragonimaging",
-    "openseadragon plugin"
+    "deep",
+    "zoom",
+    "dzi",
+    "plugin"
   ],
   "engines": {
     "node": ">= 10.0.0",
