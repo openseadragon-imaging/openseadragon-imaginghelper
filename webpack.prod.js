@@ -18,7 +18,8 @@ const bannerOpts = {
 		gitHash +
 		' (' +
 		(gitDirty ? 'dirty' : 'clean') +
-		')'
+		')' +
+		'  @license MIT'
 };
 
 const minifyOpts = {
@@ -28,7 +29,7 @@ const minifyOpts = {
 const minifyPluginOpts = {
 	// see https://webpack.js.org/plugins/babel-minify-webpack-plugin/
 	test: /\.js($|\?)/i,
-	comments: /^\**!|@preserve|@license|@cc_on/
+	comments: /^\**!|@preserve|@license|@cc_on/ //TODO Why doesn't this catch the banner comment??
 	//sourceMap: webpackConfig.devtool,
 };
 
