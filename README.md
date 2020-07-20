@@ -1,4 +1,4 @@
-## OpenSeadragonImagingHelper
+# OpenSeadragonImagingHelper
 
 [![Gitter](https://badges.gitter.im/openseadragon-imaging/community.svg)](https://gitter.im/openseadragon-imaging/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
@@ -6,17 +6,17 @@ OpenSeadragonImagingHelper is a plugin for [OpenSeadragon](https://github.com/op
 which implements some properties and methods helpful in
 imaging applications.
 
-[View the Documentation](http://msalsbery.github.io/openseadragon-imaging/docs/openseadragon-imaginghelper/index.html)
+[View the Documentation](https://openseadragon-imaging.github.io/docs/openseadragon-imaginghelper/index.html)
 
-[See the OpenSeadragon Imaging Demo/Test Site Live](http://msalsbery.github.io/openseadragon-imaging/demo/index.html)
+[Demo/Test Site](https://openseadragon-imaging.github.io/#/imaginghelper)
 
-### Usage
+## Usage
 
 _**Prerequisite note: OpenSeadragonImagingHelper requires [OpenSeadragon](https://github.com/openseadragon/openseadragon) version 2.0+.**_
 
 The OpenSeadragonImagingHelper bundle can be obtained the following ways:
 
-1. Direct download [openseadragon-imaginghelper.js](http://msalsbery.github.io/openseadragon-imaging/builds/openseadragon-imaginghelper.js) (and optionally [openseadragon-imaginghelper.js.map](http://msalsbery.github.io/openseadragon-imaging/builds/openseadragon-imaginghelper.js.map))
+1. Direct download [openseadragon-imaginghelper.js](https://openseadragon-imaging.github.io/builds/openseadragon-imaginghelper.js) (and optionally [openseadragon-imaginghelper.js.map](https://openseadragon-imaging.github.io/builds/openseadragon-imaginghelper.js.map))
 2. npm
 
 ```
@@ -25,7 +25,7 @@ The OpenSeadragonImagingHelper bundle can be obtained the following ways:
 
 The OpenSeadragonImagingHelper bundle can be included using a script tag in HTML or imported as a library module (ES2015, CommonJS, AMD).
 
-An **ImagingHelper** object can be created and attached to an [OpenSeadragon.Viewer](http://openseadragon.github.io/docs/OpenSeadragon.Viewer.html) two ways:
+An **ImagingHelper** object can be created and attached to an [OpenSeadragon.Viewer](https://openseadragon.github.io/docs/OpenSeadragon.Viewer.html) two ways:
 
 1. Call the activateImagingHelper method on the viewer
 2. Create a new ImagingHelper object, passing a viewer reference in the options parameter
@@ -84,7 +84,7 @@ import OpenSeadragonImagingHelper from '@openseadragon-imaging/openseadragon-ima
     var imagingHelper = new OpenSeadragonImagingHelper({viewer: existingviewer});
 ```
 
-### Details
+## Details
 
 The ImagingHelper class provides a simplified zoomFactor which is simply the ratio
 of the displayed image pixel size to the image's native pixel size.
@@ -100,10 +100,10 @@ named as follows:
 
 Methods are provided to zoom and/or pan using these conventions, as well as to convert
 individual horizontal/vertical values or point ({x,y}) objects between coordinate systems
-**(Note: methods that return a point object return new [OpenSeadragon.Point](http://openseadragon.github.io/docs/OpenSeadragon.Point.html)
+**(Note: methods that return a point object return new [OpenSeadragon.Point](https://openseadragon.github.io/docs/OpenSeadragon.Point.html)
 objects)**
 
-The ImagingHelper class extends the [OpenSeadragon.EventSource](http://openseadragon.github.io/docs/OpenSeadragon.EventHandler.html) class and raises
+The ImagingHelper class extends the [OpenSeadragon.EventSource](https://openseadragon.github.io/docs/OpenSeadragon.EventHandler.html) class and raises
 an event named **'image-view-changed'** whenever the viewer's zoom and/or pan position changes.
 
 ```javascript
@@ -134,18 +134,20 @@ an event named **'image-view-changed'** whenever the viewer's zoom and/or pan po
     });
 ```
 
-### Demo/Test Site
+## Demo/Test Site
 
-The 'demo' folder provides a demo/test site.
-The page displays many OpenSeadragon and OpenSeadragonImagingHelper metrics, as well as the output of many OpenSeadragonImagingHelper methods,
-all in real-time as the cursor moves and/or the image is zoomed/panned. Four sample images are provided.
+The [demo site](https://openseadragon-imaging.github.io/#/imaginghelper) is an example using ImagingHelper in a React application.
+The page displays many OpenSeadragon and OpenSeadragonImagingHelper metrics, as well as the output of many OpenSeadragonImagingHelper methods, all in real-time as the cursor moves and/or the image is zoomed/panned.
 
-Additionally, there's an example of syncing an SVG overlay for annotation support.
+The source code can be found [here](https://github.com/openseadragon-imaging/openseadragon-imaging/tree/master/site.github.io/src/page-imaginghelper).
 
-All the sample code is in [demo/scripts/viewmodel.js](http://msalsbery.github.io/openseadragon-imaging/demo/scripts/viewmodel.js).
+## Legacy Demo/Test Site
 
-### Notes
+The old demo site is still available [here](https://openseadragon-imaging.github.io/old-demo/index.html).
+This page adds an example of syncing an SVG overlay for annotation support.
 
-### In the works...
+All the sample code is in [scripts/viewmodel.js](https://openseadragon-imaging.github.io/old-demo/scripts/viewmodel.js).
+
+## TODO
 
 1. Better multi-image support
