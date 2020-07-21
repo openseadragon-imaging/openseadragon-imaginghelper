@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const merge = require('webpack-merge').merge;
 const common = require('./webpack.common.js');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const execa = require('execa');
