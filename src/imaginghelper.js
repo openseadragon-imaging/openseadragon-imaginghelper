@@ -114,8 +114,8 @@ export default (function (OSD, $) {
 		// All coordinates are logical (0 to 1) relative to the image
 		this._viewportWidth = 0.0;
 		this._viewportHeight = 0.0;
-		this._viewportOrigin = new OpenSeadragon.Point(0, 0);
-		this._viewportCenter = new OpenSeadragon.Point(0, 0);
+		this._viewportOrigin = new OSD.Point(0, 0);
+		this._viewportCenter = new OSD.Point(0, 0);
 
 		// Wire up event handlers
 		this._onOpen = OSD.delegate(this, this.onOpen);
@@ -304,7 +304,7 @@ export default (function (OSD, $) {
 			newViewerSize = this.getViewerContainerSize();
 			if (!newViewerSize.equals(this._viewerSize)) {
 				this._viewerSize = newViewerSize;
-				center = new OpenSeadragon.Point(
+				center = new OSD.Point(
 					this._viewportCenter.x,
 					this._viewportCenter.y / this.imgAspectRatio
 				);
@@ -419,7 +419,7 @@ export default (function (OSD, $) {
 				this._viewportCenter.y !== centerpoint.y
 			) {
 				this._viewer.viewport.panTo(
-					new OpenSeadragon.Point(
+					new OSD.Point(
 						centerpoint.x,
 						centerpoint.y / this.imgAspectRatio
 					),
@@ -452,7 +452,7 @@ export default (function (OSD, $) {
 		if (this._haveImage && value !== this._zoomFactor && value > 0.0) {
 			this._viewer.viewport.zoomTo(
 				(value * this.imgWidth) / this.getViewerContainerSize().x,
-				new OpenSeadragon.Point(
+				new OSD.Point(
 					this._viewportCenter.x,
 					this._viewportCenter.y / this.imgAspectRatio
 				),
@@ -515,10 +515,7 @@ export default (function (OSD, $) {
 			this._viewer.viewport.zoomTo(
 				(newzoomfactor * this.imgWidth) /
 					this.getViewerContainerSize().x,
-				new OpenSeadragon.Point(
-					logpoint.x,
-					logpoint.y / this.imgAspectRatio
-				),
+				new OSD.Point(logpoint.x, logpoint.y / this.imgAspectRatio),
 				immediately
 			);
 		}
@@ -582,10 +579,7 @@ export default (function (OSD, $) {
 				this._viewportCenter.y !== logpoint.y)
 		) {
 			this._viewer.viewport.panTo(
-				new OpenSeadragon.Point(
-					logpoint.x,
-					logpoint.y / this.imgAspectRatio
-				),
+				new OSD.Point(logpoint.x, logpoint.y / this.imgAspectRatio),
 				immediately
 			);
 		}
@@ -598,7 +592,7 @@ export default (function (OSD, $) {
 	 *
 	 **/
 	$.ImagingHelper.prototype.physicalToLogicalPoint = function (point) {
-		return new OpenSeadragon.Point(
+		return new OSD.Point(
 			this.physicalToLogicalX(point.x),
 			this.physicalToLogicalY(point.y)
 		);
@@ -611,7 +605,7 @@ export default (function (OSD, $) {
 	 *
 	 **/
 	$.ImagingHelper.prototype.logicalToPhysicalPoint = function (point) {
-		return new OpenSeadragon.Point(
+		return new OSD.Point(
 			this.logicalToPhysicalX(point.x),
 			this.logicalToPhysicalY(point.y)
 		);
@@ -700,7 +694,7 @@ export default (function (OSD, $) {
 	 *
 	 **/
 	$.ImagingHelper.prototype.logicalToDataPoint = function (point) {
-		return new OpenSeadragon.Point(
+		return new OSD.Point(
 			this.logicalToDataX(point.x),
 			this.logicalToDataY(point.y)
 		);
@@ -713,7 +707,7 @@ export default (function (OSD, $) {
 	 *
 	 **/
 	$.ImagingHelper.prototype.dataToLogicalPoint = function (point) {
-		return new OpenSeadragon.Point(
+		return new OSD.Point(
 			this.dataToLogicalX(point.x),
 			this.dataToLogicalY(point.y)
 		);
@@ -727,7 +721,7 @@ export default (function (OSD, $) {
 	 **/
 	$.ImagingHelper.prototype.physicalToDataPoint = function (point) {
 		if (this._viewer.world.getItemCount() === 1) {
-			return new OpenSeadragon.Point(
+			return new OSD.Point(
 				this.physicalToDataX(point.x),
 				this.physicalToDataY(point.y)
 			);
@@ -744,7 +738,7 @@ export default (function (OSD, $) {
 	 *
 	 **/
 	$.ImagingHelper.prototype.dataToPhysicalPoint = function (point) {
-		return new OpenSeadragon.Point(
+		return new OSD.Point(
 			this.dataToPhysicalX(point.x),
 			this.dataToPhysicalY(point.y)
 		);
@@ -807,7 +801,7 @@ export default (function (OSD, $) {
 		} else {
 			var tiledImage = this._viewer.world.getItemAt(this._worldIndex);
 			var pt = tiledImage.viewerElementToImageCoordinates(
-				new OpenSeadragon.Point(x, 0)
+				new OSD.Point(x, 0)
 			); //viewportToImageCoordinates x,y,cur or point,cur
 			return pt.x;
 		}
@@ -830,7 +824,7 @@ export default (function (OSD, $) {
 		} else {
 			var tiledImage = this._viewer.world.getItemAt(this._worldIndex);
 			var pt = tiledImage.viewerElementToImageCoordinates(
-				new OpenSeadragon.Point(0, y)
+				new OSD.Point(0, y)
 			); //viewportToImageCoordinates x,y,cur or point,cur
 			return pt.y;
 		}

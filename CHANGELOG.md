@@ -1,3 +1,7 @@
+## 2.2.2:
+
+* Fixed loading via HTML script tag
+
 ## 2.2.1:
 
 * Updated README and docs
